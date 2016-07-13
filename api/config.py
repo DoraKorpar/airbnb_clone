@@ -9,11 +9,11 @@ if env == 'development':
 	HOST = 'localhost'
 	PORT = 3333
 	DATABASE = {
-		'host': '158.69.70.185'
-		'user': 'airbnb_user_dev'
-		'database': 'airbnb_dev'
-		'port': 3306
-		'charset': 'utf8'
+		'host': '158.69.85.16',
+		'user': 'airbnb_user_dev',
+		'database': 'airbnb_dev',
+		'port': 3306,
+		'charset': 'utf8',
 		'password': os.environ.get('AIRBNB_DATABASE_PWD_DEV')
 	}
 
@@ -23,10 +23,10 @@ if env == 'production':
 	HOST = '0.0.0.0'
 	PORT = 3000
 	DATABASE = {
-		'host': '158.69.70.185'
-		'user': 'airbnb_user_prod'
-		'database': 'airbnb_prod'
-		'port': 3306
-		'charset': 'utf8'
+		'host': '158.69.85.16',
+		'user': 'airbnb_user_prod',
+		'database': 'airbnb_prod',
+		'port': 3306,
+		'charset': 'utf8',
 		'password': os.environ.get('AIRBNB_DATABASE_PWD_PROD')
 	}
