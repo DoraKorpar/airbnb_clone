@@ -8,6 +8,7 @@ class PlaceBook(BaseModel):
 	date_start = DateTimeField(null=False)
 	number_nights = IntegerField(default=1)
 
+	# returns hash of all class attributes, inc. inherited ones
 	def to_hash(self):
 		return {	'id': self.id,
 					'created_at': self.created_at,

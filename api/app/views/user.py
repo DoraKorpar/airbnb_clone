@@ -1,14 +1,24 @@
 from ..app import app
 from flask import request
+from ..models.base import database
+from peewee import *
 
 @app.route("/users", methods=["GET", "POST"])
 def users():
 	if request.method == "POST":
-		pass
+		entry = User.insert()
+		entry.execute()
 
 	elif request.method == "GET":
-		pass
+		list_users = User.select().first_name
 
 @app.route("/users/<user_id>", methods=["GET", "PUT", "DELETE"])
 def users_id(user_id):
-	pass
+	if request.method == "GET":
+		pass
+
+	elif request.method == "PUT":
+		pass
+
+	elif request.method == "DELETE":
+		pass

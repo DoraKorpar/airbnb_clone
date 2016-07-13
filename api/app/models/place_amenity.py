@@ -1,4 +1,5 @@
 from peewee import *
+from base import database
 
 class PlaceAmenities(peewee.Model):
 

@@ -13,6 +13,7 @@ class Place(BaseModel):
 	latitude = FloatField()
 	longitude = FloatField()
 
+	# returns hash of all class attributes, inc. inherited ones
 	def to_hash(self):
 		return {	'id': self.id,
 					'created_at': self.created_at,
