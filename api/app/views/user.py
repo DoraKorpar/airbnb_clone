@@ -28,17 +28,30 @@ def users():
 		return json.dumps(user.to_hash())
 
 	elif request.method == "GET":
+		# returns list of all users
 		list_users = User.select()
 		return json.dumps(list_users.to_hash())
 
 @app.route("/users/<user_id>", methods=["GET", "PUT", "DELETE"])
 def users_id(user_id):
+	
+	user = User.select().where(id=user_id).get()
 	if request.method == "GET":
-		user = User.select().where(id=users_id).get()
 		return json.dumps(user.to_hash())
 
 	elif request.method == "PUT":
-		pass
+		data = request.data
+		user.first_name = data['first_name']
+		user.last_name = data['last_name']
+		password = data['password']
+		user.password = User.set_password(password)
+
+		# user can't change email address
+		if user.email != data['email']:
+			return 
+
+		# update entry in database with overloaded save method
+		user.save()
 
 	elif request.method == "DELETE":
-		pass
+		user.delete_instance()
