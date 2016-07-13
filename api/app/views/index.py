@@ -1,8 +1,9 @@
+from ..app import app
+from flask_json import json_response
+from ..models.base import database
 import datetime
-from flask import g
-import peewee
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=["GET"])
 def index():
 	utc = datetime.utcnow()
 	now = datetime.datetime.now()

@@ -1,3 +1,4 @@
-import app from app
+from app import app
+from config import *
 
-app.run()
+app.run(host=HOST, port=PORT, debug=DEBUG)
