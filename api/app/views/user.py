@@ -10,7 +10,7 @@ def users():
 		entry.execute()
 
 	elif request.method == "GET":
-		list_users = User.select().first_name
+		
 
 @app.route("/users/<user_id>", methods=["GET", "PUT", "DELETE"])
 def users_id(user_id):
