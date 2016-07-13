@@ -16,7 +16,7 @@ def users():
 		entry = User.insert(first_name=first_name, last_name=last_name, email=email, password=User.set_password(password))
 		entry.execute()
 
-		user = User.select(first_name=first_name, last_name=last_name, email=email)
+		user = User.select().where(first_name=first_name, last_name=last_name, email=email).get()
 		return json.dumps(user.to_hash())
 
 	elif request.method == "GET":
@@ -27,7 +27,7 @@ def users():
 @app.route("/users/<user_id>", methods=["GET", "PUT", "DELETE"])
 def users_id(user_id):
 	if request.method == "GET":
-		user = User.select(id=users_id)
+		user = User.select().where(id=users_id).get()
 		return json.dumps(user.to_hash())
 
 	elif request.method == "PUT":

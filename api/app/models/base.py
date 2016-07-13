@@ -1,9 +1,10 @@
-import peewee
-import datetime
-from ....config import *
+import peewee, datetime, sys
+sys.path.append("....")
+from config import *
 
 # variable database linked to DATABASE imported from config file
-database = peewee.MySQLDatabase(DATABASE)
+
+database = peewee.MySQLDatabase(DATABASE["database"], host=DATABASE["host"], user=DATABASE["user"], port=DATABASE["port"], passwd=DATABASE["password"], charset=DATABASE["charset"])
 
 class BaseModel(peewee.Model):
 	id = peewee.PrimaryKeyField(unique=True)
