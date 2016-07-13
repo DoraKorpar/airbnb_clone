@@ -1,10 +1,10 @@
 from amenity import Amenity
-from city import City
-from place import Place
-from place_amenities import PlaceAmenities
-from place_book import PlaceBook
-from state import State
-from user import User
+from models.city import City
+from models.place import Place
+from models.place_amenities import PlaceAmenities
+from models.place_book import PlaceBook
+from models.state import State
+from models.user import User
 from app.models.base import database
 
 # generates every table in the database
