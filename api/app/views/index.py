@@ -1,4 +1,4 @@
-from ..app import app
+from app import app
 from flask_json import json_response
 from ..models.base import database
 import datetime
