@@ -1,5 +1,4 @@
 from peewee import *
-import peewee
 from base import database
 from place import Place
 from amenity import Amenity

@@ -8,6 +8,7 @@ from app.models.user import User
 from app.models.base import database
 
 # generates every table in the database
+database.connect()
 database.create_tables([
 	Amenity, 
 	City, 
@@ -16,3 +17,4 @@ database.create_tables([
 	PlaceBook, 
 	State, 
 	User])
+database.close()
