@@ -1,6 +1,6 @@
 from app import app
 from flask_json import json_response
-from ..models.base import database
+from app.models.base import database
 import datetime
 
 # manages API route '/' and only allows GET request

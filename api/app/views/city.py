@@ -17,10 +17,6 @@ def cities(state_id):
 		state = state_id
 
 		# if name already exists in selected state database, return error message
-		#
-		#
-		#
-		# EVERYTHING BELOW STILL NEEDS TO BE EDITED
 		name_check = City.select()(User.email == email)
 		if name_check:
 			return json_response(code=10000, msg="Email already exists")
